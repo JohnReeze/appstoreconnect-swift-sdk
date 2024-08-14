@@ -42,6 +42,7 @@ final class JWTRequestsAuthenticator {
         let token = try createToken()
         var urlRequest = urlRequest
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.setValue("*", forHTTPHeaderField: "Accept-Encoding")
         return urlRequest
     }
 }
